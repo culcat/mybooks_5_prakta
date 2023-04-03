@@ -1,0 +1,15 @@
+{% block content %}
+    <h1>Список книг</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'book_detail' book.pk %}">
+                    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                    <h2>{{ book.title }}</h2>
+                </a>
+            </li>
+        {% empty %}
+            <li>Нет книг</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

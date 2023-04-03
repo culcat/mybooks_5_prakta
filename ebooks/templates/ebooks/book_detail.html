@@ -1,0 +1,13 @@
+{% block content %}
+    <div class="book-detail">
+        <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+        <h1>{{ book.title }}</h1>
+        <h2>{{ book.author }}</h2>
+        <p>{{ book.publisher }}</p>
+        <p>{{ book.genre }}</p>
+        <p>{{ book.description }}</p>
+
+
+        <a href="{{ book.pdf_file.url }}" class="btn btn-primary">Читать</a>
+    </div>
+{% endblock %}
